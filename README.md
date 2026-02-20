@@ -26,10 +26,16 @@ Go to `chrome://extensions` → enable Developer mode → Load unpacked → sele
 **5. Configure**
 Click the extension icon → Options → paste your token → Load databases → pick favorites → Save.
 
+![Configuration Settings](img/1_setting.png)
+
 ## Usage
 
 - **Save page** — click the icon, select a database, click Save.
 - **Add timestamp** (YouTube only) — play to the moment you want, click the icon, click Add timestamp.
+
+![Save YouTube Video](img/2_youtube.png)
+
+![Result in Notion](img/3_result.png)
 
 ## Options
 

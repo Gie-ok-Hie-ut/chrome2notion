@@ -1,0 +1,27 @@
+# Chrome Extension
+*.crx
+*.pem
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (if you add any)
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local

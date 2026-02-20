@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chrome to Notion — Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <div>
+          <div class="title">Chrome to Notion</div>
+          <div class="subtitle">Configure your Notion connection</div>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Notion API</h2>
+        <label class="label" for="notionApiKey">Integration token</label>
+        <input
+          id="notionApiKey"
+          class="input"
+          type="password"
+          placeholder="secret_…"
+          autocomplete="off"
+        />
+        <div class="hint">
+          Stored in Chrome sync storage. Don't share this token.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Favorite databases</h2>
+        <div class="hint" style="margin-bottom:10px">
+          Favorites appear at the top of the popup dropdown. Check the databases you use most.
+        </div>
+        <button id="loadDbsBtn" class="btn btn-secondary" style="margin-bottom:12px">Load databases</button>
+        <div id="dbCheckboxList"></div>
+        <div id="dbLoadStatus" class="hint"></div>
+      </section>
+
+      <section class="card">
+        <h2>Database properties</h2>
+        <div class="grid">
+          <div>
+            <label class="label" for="titlePropertyName">Title property name</label>
+            <input id="titlePropertyName" class="input" type="text" value="Name" />
+            <div class="hint">Type: <b>Title</b></div>
+          </div>
+          <div>
+            <label class="label" for="urlPropertyName">URL property name</label>
+            <input id="urlPropertyName" class="input" type="text" value="URL" />
+            <div class="hint">Type: <b>URL</b></div>
+          </div>
+        </div>
+        <div class="hint">
+          Your selected database must have these properties with matching types (you can rename
+          them here to match your DB).
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>After saving</h2>
+        <label class="label" for="autoOpenAfterSave">Auto-open</label>
+        <select id="autoOpenAfterSave" class="input">
+          <option value="none">Do nothing</option>
+          <option value="page">Open the created Notion page</option>
+          <option value="database">Open the database</option>
+        </select>
+        <div class="hint">This opens a new browser tab (macOS Split View is not controllable by extensions).</div>
+      </section>
+
+      <div class="row">
+        <button id="saveBtn" class="btn btn-primary">Save</button>
+        <button id="testBtn" class="btn btn-secondary">Test connection</button>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="options.js" type="module"></script>
+  </body>
+</html>

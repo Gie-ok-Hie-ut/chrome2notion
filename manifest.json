@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome to Notion",
+  "version": "0.1.1",
+  "description": "Save the current page to a selected Notion database.",
+  "action": {
+    "default_title": "Save to Notion",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://api.notion.com/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
